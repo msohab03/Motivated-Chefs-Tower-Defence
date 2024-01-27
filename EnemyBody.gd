@@ -1,13 +1,11 @@
 extends CharacterBody2D
 
-@export var health = 100
+@export var enemyhealth = 100
+
+func _physics_process(delta):
+	update_health()
 
 func update_health():
 	
-	var healthbar = $healthbar
-	healthbar.value = health
-	
-	if (health >= 100):
-		healthbar.visible = false
-	else:
-		healthbar.visible = true
+	var enemyhealthbar = $"enemy_HealthBar"
+	enemyhealthbar.value = enemyhealth

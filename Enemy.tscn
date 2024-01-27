@@ -15,6 +15,17 @@ script = ExtResource("1_3f8jr")
 [node name="EnemyBody" type="CharacterBody2D" parent="."]
 script = ExtResource("2_rjcdo")
 
+[node name="enemy_HealthBar" type="ProgressBar" parent="EnemyBody"]
+modulate = Color(0.329412, 0.678431, 0.231373, 1)
+clip_contents = true
+offset_left = -32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 64.0
+scale = Vector2(0.5, 0.5)
+rounded = true
+show_percentage = false
+
 [node name="EnemyHitbox" type="CollisionShape2D" parent="EnemyBody"]
 shape = SubResource("RectangleShape2D_svtja")
 
@@ -23,15 +34,6 @@ position = Vector2(-4.76837e-07, 7.15256e-07)
 scale = Vector2(0.124477, 0.142761)
 texture = ExtResource("2_vuklm")
 
-[node name="HealthBar" type="ProgressBar" parent="EnemyBody"]
-modulate = Color(0.329412, 0.678431, 0.231373, 1)
-offset_left = -32.0
-offset_top = 32.0
-offset_right = 96.0
-offset_bottom = 64.0
-scale = Vector2(0.5, 0.5)
-show_percentage = false
-
-[node name="_Timer_136021" type="Timer" parent="."]
+[node name="Timer_regen" type="Timer" parent="EnemyBody"]
 wait_time = 0.2
 one_shot = true

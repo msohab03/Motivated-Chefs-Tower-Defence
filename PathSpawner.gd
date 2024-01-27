@@ -13,7 +13,7 @@ func _process(delta):
 	
 	if (timer > spawnTime && deltaLimit > 0):
 		deltaLimit = deltaLimit - 1
-		var temp = 100
 		var newEnemy = enemy.instantiate()
+		newEnemy.set_rotates(false)
 		add_child(newEnemy)
 		timer = 0
