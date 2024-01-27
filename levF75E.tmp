@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c66byyepf3ch7"]
+[gd_scene load_steps=7 format=3 uid="uid://c66byyepf3ch7"]
 
 [ext_resource type="Script" path="res://PathSpawner.gd" id="1_o0s0h"]
 [ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Enemy.tscn" id="2_dmkvb"]
 [ext_resource type="Texture2D" uid="uid://c58lnu4vaukcb" path="res://69768082_Realistic Isolated Decorated Birthday Cake on Transparent Background.jpg" id="2_dueht"]
 [ext_resource type="PackedScene" uid="uid://bute8osrj2n1v" path="res://HomeBase.tscn" id="3_5txif"]
-[ext_resource type="Script" path="res://HomeBase.gd" id="4_xoh05"]
 
 [sub_resource type="Curve2D" id="Curve2D_03me5"]
 _data = {
@@ -22,17 +21,12 @@ script = ExtResource("1_o0s0h")
 
 [node name="Enemy" parent="Path" instance=ExtResource("2_dmkvb")]
 rotates = false
+metadata/_edit_pinned_properties_ = [&"rotates"]
 
 [node name="HomeBase" parent="." instance=ExtResource("3_5txif")]
 physics_material_override = SubResource("PhysicsMaterial_6yr42")
-script = ExtResource("4_xoh05")
 
 [node name="HomeLooks" type="Sprite2D" parent="HomeBase"]
 position = Vector2(512, 344)
 scale = Vector2(0.0402343, 0.0393731)
 texture = ExtResource("2_dueht")
-
-[node name="HomeHealth" type="ProgressBar" parent="HomeBase"]
-offset_right = 4.0
-offset_bottom = 27.0
-show_percentage = false
