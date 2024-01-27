@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://dm0lqxwxfqk26"]
+
+[ext_resource type="PackedScene" uid="uid://drihmctssnfqh" path="res://tower.tscn" id="1_lv6ie"]
+[ext_resource type="Script" path="res://world_1.gd" id="1_oemwd"]
+[ext_resource type="Script" path="res://TowerContainer.gd" id="1_qcee3"]
+[ext_resource type="Texture2D" uid="uid://ch7m68o74btcg" path="res://Tower.png" id="3_yhvt7"]
+[ext_resource type="Script" path="res://Button.gd" id="4_ccb8a"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sv6sd"]
+
+[node name="World_1" type="Node2D"]
+material = SubResource("CanvasItemMaterial_sv6sd")
+script = ExtResource("1_oemwd")
+
+[node name="TowerContainer" type="Node2D" parent="."]
+modulate = Color(0.113725, 1, 1, 1)
+script = ExtResource("1_qcee3")
+
+[node name="Tower" parent="TowerContainer" instance=ExtResource("1_lv6ie")]
+position = Vector2(371, 339)
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.0235294, 0, 0.996078, 0.988235)
+offset_left = 574.0
+offset_top = 250.0
+offset_right = 1248.0
+offset_bottom = 633.0
+scale = Vector2(0.3, 0.3)
+icon = ExtResource("3_yhvt7")
+script = ExtResource("4_ccb8a")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
