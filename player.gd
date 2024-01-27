@@ -7,6 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+#the default code from the godot demo webinar
 func _process(delta):
 	var movement = Input.get_axis("left", "right")
 	velocity.x = movement * 500
