@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://c66byyepf3ch7"]
+
+[ext_resource type="Script" path="res://PathSpawner.gd" id="1_o0s0h"]
+[ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Enemy.tscn" id="2_dmkvb"]
+[ext_resource type="Texture2D" uid="uid://c58lnu4vaukcb" path="res://69768082_Realistic Isolated Decorated Birthday Cake on Transparent Background.jpg" id="2_dueht"]
+[ext_resource type="PackedScene" uid="uid://bute8osrj2n1v" path="res://HomeBase.tscn" id="3_5txif"]
+
+[sub_resource type="Curve2D" id="Curve2D_03me5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 960, 64, 0, 0, 0, 0, 960, 576, 0, 0, 0, 0, 64, 568, 0, 0, 0, 0, 64, 128, 0, 0, 0, 0, 832, 128, 0, 0, 0, 0, 832, 512, 0, 0, 0, 0, 192, 512, 0, 0, 0, 0, 192, 256, 0, 0, 0, 0, 320, 256, 0, 0, 0, 0, 320, 448, 0, 0, 0, 0, 704, 448, 0, 0, 0, 0, 704, 192, 0, 0, 0, 0, 512, 192, 0, 0, 0, 0, 512, 288)
+}
+point_count = 15
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6yr42"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_03me5")
+script = ExtResource("1_o0s0h")
+
+[node name="Enemy" parent="Path" instance=ExtResource("2_dmkvb")]
+rotates = false
+metadata/_edit_pinned_properties_ = [&"rotates"]
+
+[node name="HomeBase" parent="." instance=ExtResource("3_5txif")]
+physics_material_override = SubResource("PhysicsMaterial_6yr42")
+
+[node name="HomeLooks" type="Sprite2D" parent="HomeBase"]
+position = Vector2(512, 344)
+scale = Vector2(0.0402343, 0.0393731)
+texture = ExtResource("2_dueht")
