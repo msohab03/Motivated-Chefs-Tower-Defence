@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciq7trtw2r8rk"
-path="res://.godot/imported/StartScreenBG.png-e3a0c5e2405c93a5b93af5f438fb5689.ctex"
+uid="uid://cbw46dwymgrfj"
+path="res://.godot/imported/MMMoon.png-a7c12fb6f144eebe08bc156dbb94163b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StartScreenBG.png"
-dest_files=["res://.godot/imported/StartScreenBG.png-e3a0c5e2405c93a5b93af5f438fb5689.ctex"]
+source_file="res://assets/MMMoon.png"
+dest_files=["res://.godot/imported/MMMoon.png-a7c12fb6f144eebe08bc156dbb94163b.ctex"]
 
 [params]
 
