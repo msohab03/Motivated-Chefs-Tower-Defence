@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Edepus TowerDefense"
-run/main_scene="res://level_1.tscn"
+run/main_scene="res://StartMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [importer_defaults]
