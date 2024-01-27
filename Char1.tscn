@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5joek407w23y"]
+
+[ext_resource type="Texture2D" uid="uid://c6jgkl55ly17h" path="res://Pan_Blue_Circle.png" id="1_n6lid"]
+[ext_resource type="Script" path="res://Char1.gd" id="1_pxk6t"]
+[ext_resource type="PackedScene" uid="uid://b0beo6wi0u22i" path="res://world.tscn" id="3_hn0bq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qcedc"]
+radius = 12.1709
+
+[node name="Char1" type="Node2D"]
+position = Vector2(787, 751)
+script = ExtResource("1_pxk6t")
+
+[node name="BlueOval" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-05, 0)
+scale = Vector2(0.932, 2)
+texture = ExtResource("1_n6lid")
+offset = Vector2(100, 2.08165e-12)
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+scale = Vector2(175, 175)
+shape = SubResource("CircleShape2D_qcedc")
+
+[node name="World" parent="." instance=ExtResource("3_hn0bq")]
+position = Vector2(2365, 769)
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

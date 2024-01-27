@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://daia1p8vap13d"]
+
+[ext_resource type="Texture2D" uid="uid://c6jgkl55ly17h" path="res://Pan_Blue_Circle.png" id="1_sbug7"]
+
+[node name="Char1" type="Node2D"]
+
+[node name="BlueOval" type="Sprite2D" parent="."]
+position = Vector2(306, 231)
+scale = Vector2(0.29375, 0.50625)
+texture = ExtResource("1_sbug7")
