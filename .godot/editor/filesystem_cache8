@@ -1,0 +1,15 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1706398476
+Char1.gd::GDScript::-1::1706396088::0::1::::<>Node2D<>::
+Char1.tscn::PackedScene::4511523144907335372::1706396295::0::1::::<><>::uid://c6jgkl55ly17h::::res://Pan_Blue_Circle.png<>res://Char1.gd<>uid://b0beo6wi0u22i::::res://world.tscn
+Characters.tscn::PackedScene::7175824343536871035::1706315994::0::1::::<><>::uid://c6jgkl55ly17h::::res://Pan_Blue_Circle.png
+Enemy.gd::GDScript::-1::1706388734::0::1::::<>PathFollow2D<>::
+Enemy.tscn::PackedScene::1158024149697996155::1706388729::0::1::::<><>::res://Enemy.gd<>res://EnemyBody.gd<>uid://dj1aks5q16dsx::::res://PacMan.jpg
+icon.svg::CompressedTexture2D::5796551687061169353::1706314742::1706398239::1::::<><>::
+Pan_Blue_Circle.png::CompressedTexture2D::6967657705327112671::1706315069::1706398239::1::::<><>::
+player.gd::GDScript::-1::1706384362::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::6762082060475097309::1706396295::0::1::::<><>::res://player.gd<>uid://cot5mhp27mpan::::res://icon.svg
+README.md::TextFile::-1::1706314742::0::1::::<><>::
+world.tscn::PackedScene::4143475684090966458::1706396295::0::1::::<><>::uid://c3luree3ysy4t::::res://player.tscn
+::res://Singleton/::1706331999
+GameData.gd::GDScript::-1::1706331999::0::1::::<>Node<>::
