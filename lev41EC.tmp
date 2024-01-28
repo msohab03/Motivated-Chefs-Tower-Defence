@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://c66byyepf3ch7"]
+
+[ext_resource type="Script" path="res://level_1.gd" id="1_iy1uo"]
+[ext_resource type="Script" path="res://PathSpawner.gd" id="1_o0s0h"]
+[ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Enemy.tscn" id="2_dmkvb"]
+[ext_resource type="Texture2D" uid="uid://c58lnu4vaukcb" path="res://69768082_Realistic Isolated Decorated Birthday Cake on Transparent Background.jpg" id="2_dueht"]
+[ext_resource type="PackedScene" uid="uid://d351a2lerbb7p" path="res://Home_Base.tscn" id="3_booaq"]
+[ext_resource type="PackedScene" uid="uid://dymrf7ycynfkq" path="res://tower_place_ui.tscn" id="6_as1uv"]
+[ext_resource type="Script" path="res://Label.gd" id="7_ar3k6"]
+
+[sub_resource type="Curve2D" id="Curve2D_03me5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 48, 0, 0, 0, 0, 984, 48, 0, 0, 0, 0, 984, 560, 0, 0, 0, 0, 792, 560, 0, 0, 0, 0, 24, 560, 0, 0, 0, 0, 24, 368, 0, 0, 0, 0, 24, 176, 0, 0, 0, 0, 152, 176, 0, 0, 0, 0, 152, 496, 0, 0, 0, 0, 344, 496, 0, 0, 0, 0, 344, 176, 0, 0, 0, 0, 536, 176, 0, 0, 0, 0, 536, 496, 0, 0, 0, 0, 664, 496, 0, 0, 0, 0, 664, 176, 0, 0, 0, 0, 840, 176, 0, 0, 0, 0, 840, 400, 0, 0, 0, 0, 840, 448)
+}
+point_count = 18
+
+[node name="level_1" type="Node2D"]
+script = ExtResource("1_iy1uo")
+
+[node name="Path" type="Path2D" parent="."]
+position = Vector2(40, 16)
+curve = SubResource("Curve2D_03me5")
+script = ExtResource("1_o0s0h")
+
+[node name="Enemy" parent="Path" instance=ExtResource("2_dmkvb")]
+position = Vector2(0, 48)
+rotates = false
+
+[node name="HomeBase" parent="." instance=ExtResource("3_booaq")]
+position = Vector2(880, 419)
+mass = 0.01
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="HomeBase"]
+position = Vector2(0, 40)
+rotation = 3.14159
+scale = Vector2(0.0329818, -0.0317238)
+texture = ExtResource("2_dueht")
+
+[node name="regin timer" type="Timer" parent="HomeBase"]
+wait_time = 0.5
+
+[node name="TowerPlaceUI" parent="." instance=ExtResource("6_as1uv")]
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 545.0
+offset_right = 1152.0
+offset_bottom = 644.0
+script = ExtResource("7_ar3k6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 545.0
+offset_right = 1024.0
+offset_bottom = 585.0
+text = "SCORE:"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1088.0
+offset_right = 1152.0
+offset_bottom = 64.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2

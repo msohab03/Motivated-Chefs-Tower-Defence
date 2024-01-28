@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cimtjr4j463i7"]
 
 [ext_resource type="Script" path="res://tower.gd" id="1_cegdm"]
-[ext_resource type="Texture2D" uid="uid://csm5llkd55gcs" path="res://towers/Billy.png" id="2_svn8w"]
+[ext_resource type="Texture2D" uid="uid://bys0j7cnamvf2" path="res://towers/Billy.png" id="2_gxlkw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bm4sy"]
 size = Vector2(136, 149)
@@ -13,7 +13,7 @@ script = ExtResource("1_cegdm")
 [node name="Billy" type="Sprite2D" parent="."]
 position = Vector2(0, 11.25)
 scale = Vector2(1, 0.94)
-texture = ExtResource("2_svn8w")
+texture = ExtResource("2_gxlkw")
 
 [node name="Area2D" type="Area2D" parent="."]
 

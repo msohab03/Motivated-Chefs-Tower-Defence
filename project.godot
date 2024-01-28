@@ -14,10 +14,6 @@ config/name="Edepus TowerDefense"
 run/main_scene="res://StartMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
-[display]
-
-window/stretch/mode="viewport"
-
 [importer_defaults]
 
 animation_library={

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var enemyhealth = 100
-@export var kills = 1
+@export var kills = 10
 const bulletPath = preload("res://Bullet.tscn")
 
 func _physics_process(delta):
