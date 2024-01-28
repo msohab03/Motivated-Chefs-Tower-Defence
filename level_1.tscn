@@ -116,16 +116,16 @@ offset_bottom = 40.0
 
 [node name="Score" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 1024.0
-offset_top = 545.0
-offset_right = 1152.0
-offset_bottom = 644.0
+offset_left = 1048.0
+offset_top = 514.0
+offset_right = 1176.0
+offset_bottom = 613.0
 script = ExtResource("7_ar3k6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 545.0
-offset_right = 1024.0
-offset_bottom = 585.0
+offset_left = 984.0
+offset_top = 514.0
+offset_right = 1048.0
+offset_bottom = 554.0
 text = "SCORE:"

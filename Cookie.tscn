@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_y0vp1"]
 [ext_resource type="Script" path="res://EnemyBody.gd" id="2_qrcmx"]
-[ext_resource type="Texture2D" uid="uid://w1nip5nea7cn" path="res://food/10_baguette_dish.png" id="3_4j521"]
+[ext_resource type="Texture2D" uid="uid://v6n1c6l7bftn" path="res://food/29_cookies_dish.png" id="3_jrhed"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ce527"]
 radius = 64.0
@@ -31,4 +31,4 @@ metadata/_edit_use_anchors_ = true
 [node name="EnemyLooks" type="Sprite2D" parent="EnemyBody"]
 texture_filter = 1
 scale = Vector2(1.99811, 2.21108)
-texture = ExtResource("3_4j521")
+texture = ExtResource("3_jrhed")
