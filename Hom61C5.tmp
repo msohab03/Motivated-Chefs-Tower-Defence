@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://d351a2lerbb7p"]
+
+[ext_resource type="Script" path="res://Base.gd" id="2_uob35"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gelmc"]
+radius = 96.0
+
+[node name="HomeBase" type="RigidBody2D"]
+mass = 1000.0
+gravity_scale = -1.0
+script = ExtResource("2_uob35")
+
+[node name="Base_HealthBar" type="ProgressBar" parent="."]
+modulate = Color(1, 0.435294, 1, 1)
+offset_left = -80.0
+offset_top = 104.0
+offset_right = 240.0
+offset_bottom = 134.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="regin_timer" type="Timer" parent="."]
+
+[node name="Base" type="Area2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
+shape = SubResource("CircleShape2D_gelmc")
+
+[connection signal="body_entered" from="Base" to="." method="_on_base_body_entered"]

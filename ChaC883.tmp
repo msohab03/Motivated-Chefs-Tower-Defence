@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5joek407w23y"]
+
+[ext_resource type="Texture2D" uid="uid://c6jgkl55ly17h" path="res://Pan_Blue_Circle.png" id="1_n6lid"]
+[ext_resource type="Script" path="res://Char1.gd" id="1_pxk6t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qcedc"]
+radius = 1.04445
+
+[node name="Char1" type="StaticBody2D"]
+position = Vector2(3, -1)
+script = ExtResource("1_pxk6t")
+
+[node name="BlueOval" type="Sprite2D" parent="."]
+position = Vector2(1.14441e-05, 1.99998)
+scale = Vector2(0.0632539, 0.16875)
+texture = ExtResource("1_n6lid")
+offset = Vector2(100, 2.08165e-12)
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+scale = Vector2(175, 175)
+shape = SubResource("CircleShape2D_qcedc")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

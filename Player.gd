@@ -1,17 +1,8 @@
-extends CharacterBody2D
-
-@export var enemyhealth = 100
-
-func _physics_process(delta):
-	update_health()
-
-func update_health():
-	var enemyhealthbar = $"enemy_HealthBar"
-	enemyhealthbar.value = enemyhealth
+extends RigidBody2D
 
 # Bullet properties
 var speed = 300   # Speed of the bullet
-var damage = 10  # Damage dealt to the target
+var damage = 5  # Damage dealt to the target
 
 # Target information
 var target : Node2D = null
@@ -39,19 +30,8 @@ func _on_Bullet_body_entered(body):
 
 		# Remove the bullet from the scene
 		queue_free()
-		
-func take_damage():
-	enemyhealth -= 10
-	if(enemyhealth<0):
-		enemyhealth = 0
-		queue_free()
-	update_health()
-	
+
 # Function to set the bullet's initial position and rotation
 func start(position, rotation):
 	global_position = position
 	global_rotation = rotation
-	
-func get_damage():
-	return damage
-

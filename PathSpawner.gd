@@ -1,8 +1,8 @@
 extends Path2D
 
 var timer = 0
-@export var spawnTime = 3
-@export var charLimit = 5
+@export var spawnTime = 0.5
+@export var charLimit = 20
 var enemy = preload("res://Enemy.tscn")
 var deltaLimit = charLimit - 1
 
