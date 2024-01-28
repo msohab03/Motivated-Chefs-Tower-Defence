@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddqgb6o47b5a3"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_f503p"]
+[ext_resource type="Texture2D" path="res://towers/PopButton.png" id="2_gvhkv"]
+[ext_resource type="Texture2D" path="res://assets/PopDrawer.png" id="3_1yj1d"]
+[ext_resource type="Texture2D" path="res://assets/MMBG.png" id="3_x20ho"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_f503p")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_top = 48.0
+offset_right = 1152.0
+offset_bottom = 359.0
+theme_override_constants/margin_top = -98
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("2_gvhkv")
+texture_pressed = ExtResource("3_x20ho")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_1yj1d")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
