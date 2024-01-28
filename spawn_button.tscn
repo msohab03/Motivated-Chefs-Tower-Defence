@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://d37mtftck3vxb"]
+
+[ext_resource type="Texture2D" uid="uid://ch7m68o74btcg" path="res://Tower.png" id="2_lcf46"]
+
+[sub_resource type="GDScript" id="GDScript_2j27e"]
+script/source = "extends Button
+
+func _on_button_pressed():
+	var sceneToSpawn = Tower.new()
+	var billy = sceneToSpawn.instance()
+	get_tree().root.add_child(billy)
+
+
+
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7emly"]
+radius = 110.202
+
+[node name="Button" type="Button"]
+modulate = Color(0.0235294, 0, 0.996078, 0.988235)
+anchors_preset = -1
+anchor_left = 0.098
+anchor_top = 0.26
+anchor_right = 0.098
+anchor_bottom = 0.26
+offset_left = 106.104
+offset_top = -43.48
+offset_right = 780.104
+offset_bottom = 339.52
+scale = Vector2(0.289916, 0.289655)
+icon = ExtResource("2_lcf46")
+script = SubResource("GDScript_2j27e")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.990476, 1.025)
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(-366.667, 63.3333)
+shape = SubResource("CircleShape2D_7emly")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
