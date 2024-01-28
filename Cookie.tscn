@@ -1,23 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://bht7qwq3uet11"]
 
-[ext_resource type="Script" path="res://Enemy.gd" id="1_y0vp1"]
-[ext_resource type="Script" path="res://EnemyBody.gd" id="2_qrcmx"]
+[ext_resource type="Script" path="res://Cookie.gd" id="1_m22ya"]
+[ext_resource type="Script" path="res://CookieBody.gd" id="2_aflop"]
 [ext_resource type="Texture2D" uid="uid://v6n1c6l7bftn" path="res://food/29_cookies_dish.png" id="3_jrhed"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ce527"]
 radius = 64.0
 
-[node name="Baguette" type="PathFollow2D"]
+[node name="Cookie" type="PathFollow2D"]
 loop = false
-script = ExtResource("1_y0vp1")
+script = ExtResource("1_m22ya")
 
-[node name="EnemyBody" type="CharacterBody2D" parent="."]
-script = ExtResource("2_qrcmx")
+[node name="CookieBody" type="CharacterBody2D" parent="."]
+script = ExtResource("2_aflop")
 
-[node name="EnemyHitbox" type="CollisionShape2D" parent="EnemyBody"]
+[node name="EnemyHitbox" type="CollisionShape2D" parent="CookieBody"]
 shape = SubResource("CircleShape2D_ce527")
 
-[node name="enemy_HealthBar" type="ProgressBar" parent="EnemyBody"]
+[node name="enemy_HealthBar" type="ProgressBar" parent="CookieBody"]
 modulate = Color(0.329412, 0.678431, 0.231373, 1)
 clip_contents = true
 offset_left = -32.0
@@ -25,10 +25,12 @@ offset_top = 32.0
 offset_right = 96.0
 offset_bottom = 64.0
 scale = Vector2(0.5, 0.5)
+max_value = 50.0
 rounded = true
+show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="EnemyLooks" type="Sprite2D" parent="EnemyBody"]
+[node name="EnemyLooks" type="Sprite2D" parent="CookieBody"]
 texture_filter = 1
 scale = Vector2(1.99811, 2.21108)
 texture = ExtResource("3_jrhed")

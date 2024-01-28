@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://qq7qu1hcwlt0"]
 
-[ext_resource type="Script" path="res://Enemy.gd" id="1_3f8jr"]
-[ext_resource type="Script" path="res://EnemyBody.gd" id="2_rjcdo"]
+[ext_resource type="Script" path="res://Curry.gd" id="1_x56xi"]
+[ext_resource type="Script" path="res://CurryBody.gd" id="2_ae5be"]
 [ext_resource type="Texture2D" uid="uid://br4pn7jcl1hiq" path="res://food/33_curry_dish.png" id="3_nu3c3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ce527"]
@@ -9,15 +9,15 @@ radius = 64.0
 
 [node name="Curry" type="PathFollow2D"]
 loop = false
-script = ExtResource("1_3f8jr")
+script = ExtResource("1_x56xi")
 
-[node name="EnemyBody" type="CharacterBody2D" parent="."]
-script = ExtResource("2_rjcdo")
+[node name="CurryBody" type="CharacterBody2D" parent="."]
+script = ExtResource("2_ae5be")
 
-[node name="EnemyHitbox" type="CollisionShape2D" parent="EnemyBody"]
+[node name="EnemyHitbox" type="CollisionShape2D" parent="CurryBody"]
 shape = SubResource("CircleShape2D_ce527")
 
-[node name="enemy_HealthBar" type="ProgressBar" parent="EnemyBody"]
+[node name="enemy_HealthBar" type="ProgressBar" parent="CurryBody"]
 modulate = Color(0.329412, 0.678431, 0.231373, 1)
 clip_contents = true
 offset_left = -32.0
@@ -25,10 +25,12 @@ offset_top = 32.0
 offset_right = 96.0
 offset_bottom = 64.0
 scale = Vector2(0.5, 0.5)
+max_value = 500.0
 rounded = true
+show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="EnemyLooks" type="Sprite2D" parent="EnemyBody"]
+[node name="EnemyLooks" type="Sprite2D" parent="CurryBody"]
 texture_filter = 1
 scale = Vector2(1.99811, 2.21108)
 texture = ExtResource("3_nu3c3")

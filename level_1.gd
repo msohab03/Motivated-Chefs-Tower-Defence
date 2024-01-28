@@ -1,7 +1,7 @@
 extends Node2D
 
 var time = 0
-var kills = 0
+var kills = 100
 @onready var _animated_sprite = $Conveyor
 
 func _ready():
