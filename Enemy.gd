@@ -9,5 +9,3 @@ func _process(delta):
 	
 	if(loop == false && get_progress_ratio() == 1):
 		queue_free()
-
-
