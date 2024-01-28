@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dymrf7ycynfkq"]
+
+[ext_resource type="PackedScene" uid="uid://ct10v3buqw8m3" path="res://Tower1Panel.tscn" id="1_xsqvc"]
+
+[node name="TowerPlaceUI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 543.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 1145.0
+offset_bottom = 97.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="Panel" parent="Panel/FlowContainer" instance=ExtResource("1_xsqvc")]
+layout_mode = 2

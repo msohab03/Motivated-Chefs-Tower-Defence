@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var enemyhealth = 100
+@export var kills = 1
 const bulletPath = preload("res://Bullet.tscn")
 
 func _physics_process(delta):
@@ -15,7 +16,11 @@ func take_damage(damage):
 	if(enemyhealth<=0):
 		enemyhealth = 0
 		queue_free()
+		update_health()
+		return true
 	update_health()
+	return false
+	
 
 func get_damage():
 	return enemyhealth

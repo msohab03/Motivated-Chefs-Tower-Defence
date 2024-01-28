@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c66byyepf3ch7"]
+[gd_scene load_steps=9 format=3 uid="uid://c66byyepf3ch7"]
 
+[ext_resource type="Script" path="res://level_1.gd" id="1_iy1uo"]
 [ext_resource type="Script" path="res://PathSpawner.gd" id="1_o0s0h"]
 [ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Enemy.tscn" id="2_dmkvb"]
 [ext_resource type="Texture2D" uid="uid://c58lnu4vaukcb" path="res://69768082_Realistic Isolated Decorated Birthday Cake on Transparent Background.jpg" id="2_dueht"]
 [ext_resource type="PackedScene" uid="uid://d351a2lerbb7p" path="res://Home_Base.tscn" id="3_booaq"]
-[ext_resource type="PackedScene" uid="uid://b5joek407w23y" path="res://Char1.tscn" id="6_tjdy2"]
+[ext_resource type="PackedScene" uid="uid://dymrf7ycynfkq" path="res://tower_place_ui.tscn" id="6_as1uv"]
+[ext_resource type="Script" path="res://Label.gd" id="7_ar3k6"]
 
 [sub_resource type="Curve2D" id="Curve2D_03me5"]
 _data = {
@@ -13,6 +15,7 @@ _data = {
 point_count = 18
 
 [node name="level_1" type="Node2D"]
+script = ExtResource("1_iy1uo")
 
 [node name="Path" type="Path2D" parent="."]
 position = Vector2(40, 16)
@@ -39,5 +42,28 @@ texture = ExtResource("2_dueht")
 [node name="regin timer" type="Timer" parent="HomeBase"]
 wait_time = 0.5
 
-[node name="Char1" parent="." instance=ExtResource("6_tjdy2")]
-position = Vector2(259, 167)
+[node name="TowerPlaceUI" parent="." instance=ExtResource("6_as1uv")]
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 545.0
+offset_right = 1152.0
+offset_bottom = 644.0
+script = ExtResource("7_ar3k6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 545.0
+offset_right = 1024.0
+offset_bottom = 585.0
+text = "SCORE:"

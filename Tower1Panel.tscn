@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct10v3buqw8m3"]
+
+[ext_resource type="Script" path="res://Tower1Panel.gd" id="1_g26vg"]
+[ext_resource type="Texture2D" uid="uid://csm5llkd55gcs" path="res://towers/Billy.png" id="2_pbb64"]
+
+[node name="Tower1Panel" type="Panel"]
+custom_minimum_size = Vector2(90, 90)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_g26vg")
+
+[node name="PopButton" type="Sprite2D" parent="."]
+position = Vector2(52, 58)
+scale = Vector2(0.19955, 0.358)
+texture = ExtResource("2_pbb64")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
