@@ -2,7 +2,11 @@ extends Node2D
 
 var time = 0
 var kills = 0
+@onready var _animated_sprite = $Conveyor
 
+func _ready():
+	_animated_sprite.play("Conveyor") #animated background
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

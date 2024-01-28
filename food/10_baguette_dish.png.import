@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by0now7vtfow0"
-path="res://.godot/imported/Billy.png-c0c447da7b32c8d6f02a6e789234ea3e.ctex"
+uid="uid://w1nip5nea7cn"
+path="res://.godot/imported/10_baguette_dish.png-1934661570df3a4adfbc42a0dc9c8fa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://towers/Billy.png"
-dest_files=["res://.godot/imported/Billy.png-c0c447da7b32c8d6f02a6e789234ea3e.ctex"]
+source_file="res://food/10_baguette_dish.png"
+dest_files=["res://.godot/imported/10_baguette_dish.png-1934661570df3a4adfbc42a0dc9c8fa2.ctex"]
 
 [params]
 

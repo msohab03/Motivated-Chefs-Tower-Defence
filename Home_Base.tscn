@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d351a2lerbb7p"]
+[gd_scene load_steps=3 format=3 uid="uid://pddodyab41tw"]
 
 [ext_resource type="Script" path="res://Base.gd" id="2_uob35"]
 
@@ -26,6 +26,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(0, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
+position = Vector2(0, 21)
 shape = SubResource("CircleShape2D_gelmc")
 
 [connection signal="body_entered" from="Base" to="." method="_on_base_body_entered"]

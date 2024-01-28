@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by0now7vtfow0"
-path="res://.godot/imported/Billy.png-c0c447da7b32c8d6f02a6e789234ea3e.ctex"
+uid="uid://yg2m08qitjmq"
+path="res://.godot/imported/MAP_5.png-a18aa0b0d07bb6bf7966c37251e36a42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://towers/Billy.png"
-dest_files=["res://.godot/imported/Billy.png-c0c447da7b32c8d6f02a6e789234ea3e.ctex"]
+source_file="res://assets/Background1/MAP_5.png"
+dest_files=["res://.godot/imported/MAP_5.png-a18aa0b0d07bb6bf7966c37251e36a42.ctex"]
 
 [params]
 

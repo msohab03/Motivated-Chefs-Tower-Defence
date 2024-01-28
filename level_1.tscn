@@ -1,43 +1,105 @@
-[gd_scene load_steps=9 format=3 uid="uid://c66byyepf3ch7"]
+[gd_scene load_steps=21 format=3 uid="uid://c66byyepf3ch7"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_iy1uo"]
 [ext_resource type="Script" path="res://PathSpawner.gd" id="1_o0s0h"]
-[ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Enemy.tscn" id="2_dmkvb"]
-[ext_resource type="Texture2D" uid="uid://c58lnu4vaukcb" path="res://69768082_Realistic Isolated Decorated Birthday Cake on Transparent Background.jpg" id="2_dueht"]
-[ext_resource type="PackedScene" path="res://Home_Base.tscn" id="3_booaq"]
+[ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Curry.tscn" id="2_dmkvb"]
+[ext_resource type="Texture2D" uid="uid://dxa61lg77u2k1" path="res://assets/Background1/MAP_1.png" id="2_utfkk"]
+[ext_resource type="PackedScene" uid="uid://pddodyab41tw" path="res://Home_Base.tscn" id="3_booaq"]
+[ext_resource type="Texture2D" uid="uid://b1dd1cvulj28f" path="res://assets/Background1/MAP_2.png" id="3_cyxpm"]
+[ext_resource type="Texture2D" uid="uid://dyjnnswmydcdc" path="res://assets/Background1/MAP_3.png" id="4_8nur2"]
+[ext_resource type="Texture2D" uid="uid://cf1xk7uoflst3" path="res://assets/Background1/MAP_4.png" id="5_b1m7s"]
 [ext_resource type="PackedScene" uid="uid://dymrf7ycynfkq" path="res://tower_place_ui.tscn" id="6_as1uv"]
+[ext_resource type="Texture2D" uid="uid://yg2m08qitjmq" path="res://assets/Background1/MAP_5.png" id="6_w63d2"]
 [ext_resource type="Script" path="res://Label.gd" id="7_ar3k6"]
+[ext_resource type="Texture2D" uid="uid://cxjquprydqfw8" path="res://assets/Background1/MAP_6.png" id="7_q26rh"]
+[ext_resource type="Texture2D" uid="uid://bddifylifpaai" path="res://assets/Background1/MAP_7.png" id="8_6fdvv"]
+[ext_resource type="Texture2D" uid="uid://b4xxef6w4jx1j" path="res://assets/Background1/MAP_8.png" id="9_nfeth"]
+[ext_resource type="Texture2D" uid="uid://c60685rtwucix" path="res://assets/Background1/MAP_9.png" id="10_oom7o"]
+[ext_resource type="Texture2D" uid="uid://b5nusyqmds0j6" path="res://assets/Background1/MAP_10.png" id="11_6ijlp"]
+[ext_resource type="Texture2D" uid="uid://b7iyxumen44fu" path="res://assets/Background1/MAP_11.png" id="12_pw1gb"]
+[ext_resource type="Texture2D" uid="uid://r6ac80iv4dtk" path="res://assets/BIN.png" id="16_gxom8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ela0k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_utfkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cyxpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8nur2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b1m7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w63d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q26rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6fdvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nfeth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oom7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6ijlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pw1gb")
+}],
+"loop": true,
+"name": &"Conveyor",
+"speed": 6.0
+}]
 
 [sub_resource type="Curve2D" id="Curve2D_03me5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 48, 0, 0, 0, 0, 984, 48, 0, 0, 0, 0, 984, 560, 0, 0, 0, 0, 792, 560, 0, 0, 0, 0, 24, 560, 0, 0, 0, 0, 24, 368, 0, 0, 0, 0, 24, 176, 0, 0, 0, 0, 152, 176, 0, 0, 0, 0, 152, 496, 0, 0, 0, 0, 344, 496, 0, 0, 0, 0, 344, 176, 0, 0, 0, 0, 536, 176, 0, 0, 0, 0, 536, 496, 0, 0, 0, 0, 664, 496, 0, 0, 0, 0, 664, 176, 0, 0, 0, 0, 840, 176, 0, 0, 0, 0, 840, 400, 0, 0, 0, 0, 840, 448)
+"points": PackedVector2Array(0, 0, 0, 0, 976, 24, 0, 0, 0, 0, 16, 24, 0, 0, 0, 0, 16, 456, 0, 0, 0, 0, 208, 456, 0, 0, 0, 0, 200, 208, 0, 0, 0, 0, 384, 208, 0, 0, 0, 0, 384, 456, 0, 0, 0, 0, 576, 456, 0, 0, 0, 0, 568, 208, 0, 0, 0, 0, 760, 208, 0, 0, 0, 0, 760, 448, 0, 0, 0, 0, 944, 456, 0, 0, 0, 0, 944, 200, 0, 0, 0, 0, 1008, 208)
 }
-point_count = 18
+point_count = 14
 
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_iy1uo")
+
+[node name="Conveyor" type="AnimatedSprite2D" parent="."]
+position = Vector2(577.893, 321.5)
+scale = Vector2(0.767857, 0.767857)
+sprite_frames = SubResource("SpriteFrames_ela0k")
+animation = &"Conveyor"
+metadata/_edit_lock_ = true
 
 [node name="Path" type="Path2D" parent="."]
 position = Vector2(40, 16)
 curve = SubResource("Curve2D_03me5")
 script = ExtResource("1_o0s0h")
+spawnTime = null
+charLimit = null
 
-[node name="Enemy" parent="Path" instance=ExtResource("2_dmkvb")]
-position = Vector2(0, 48)
+[node name="Curry" parent="Path" instance=ExtResource("2_dmkvb")]
+position = Vector2(976, 24)
 rotates = false
 
 [node name="HomeBase" parent="." instance=ExtResource("3_booaq")]
-position = Vector2(880, 419)
+position = Vector2(1016, 224)
+rotation = -1.57079
 mass = 0.01
 gravity_scale = 0.0
 lock_rotation = true
 freeze = true
 
-[node name="Sprite2D" type="Sprite2D" parent="HomeBase"]
-position = Vector2(0, 40)
-rotation = 3.14159
-scale = Vector2(0.0329818, -0.0317238)
-texture = ExtResource("2_dueht")
+[node name="Bin" type="Sprite2D" parent="HomeBase"]
+position = Vector2(-1.49963, 68.9996)
+rotation = 1.57079
+scale = Vector2(0.766672, 0.766672)
+texture = ExtResource("16_gxom8")
 
 [node name="regin timer" type="Timer" parent="HomeBase"]
 wait_time = 0.5

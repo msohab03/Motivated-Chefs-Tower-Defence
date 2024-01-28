@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://qq7qu1hcwlt0"]
+[gd_scene load_steps=5 format=3 uid="uid://b7hqomxmsegdy"]
 
-[ext_resource type="Script" path="res://Enemy.gd" id="1_3f8jr"]
-[ext_resource type="Script" path="res://EnemyBody.gd" id="2_rjcdo"]
-[ext_resource type="Texture2D" uid="uid://dj1aks5q16dsx" path="res://PacMan.jpg" id="2_vuklm"]
+[ext_resource type="Script" path="res://Enemy.gd" id="1_h7sva"]
+[ext_resource type="Script" path="res://EnemyBody.gd" id="2_tn3i4"]
+[ext_resource type="Texture2D" uid="uid://w1nip5nea7cn" path="res://food/10_baguette_dish.png" id="3_8adl2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ce527"]
 radius = 64.0
 
-[node name="Enemy" type="PathFollow2D"]
+[node name="Baguette" type="PathFollow2D"]
 loop = false
-script = ExtResource("1_3f8jr")
+script = ExtResource("1_h7sva")
 
 [node name="EnemyBody" type="CharacterBody2D" parent="."]
-script = ExtResource("2_rjcdo")
+script = ExtResource("2_tn3i4")
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="EnemyBody"]
 shape = SubResource("CircleShape2D_ce527")
@@ -29,6 +29,6 @@ rounded = true
 metadata/_edit_use_anchors_ = true
 
 [node name="EnemyLooks" type="Sprite2D" parent="EnemyBody"]
-position = Vector2(8.52651e-14, 7.15256e-07)
-scale = Vector2(0.124477, 0.142761)
-texture = ExtResource("2_vuklm")
+texture_filter = 1
+scale = Vector2(1.99811, 2.21108)
+texture = ExtResource("3_8adl2")

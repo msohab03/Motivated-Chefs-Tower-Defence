@@ -8,6 +8,9 @@ var timer2 = 2
 @export var charLimit = 100
 
 var enemy = preload("res://Enemy.tscn")
+var enemy2 = preload("res://Enemy.tscn")
+$"Enemy/EnemyBody/EnemyLooks".texture = load("res://food/10_baguette_dish.png")
+var enemy3 = preload("res://Enemy.tscn")
 var deltaLimit = charLimit - 1
 
 
