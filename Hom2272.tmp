@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://Base.gd" id="2_uob35"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gelmc"]
-radius = 112.0
+radius = 96.0
 
 [node name="HomeBase" type="RigidBody2D"]
 mass = 1000.0
 gravity_scale = -1.0
 script = ExtResource("2_uob35")
+Health = null
 
 [node name="Base_HealthBar" type="ProgressBar" parent="."]
 modulate = Color(1, 0.435294, 1, 1)
@@ -23,7 +24,7 @@ metadata/_edit_use_anchors_ = true
 [node name="regin_timer" type="Timer" parent="."]
 
 [node name="Base" type="Area2D" parent="."]
-position = Vector2(0, 32)
+position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
 shape = SubResource("CircleShape2D_gelmc")

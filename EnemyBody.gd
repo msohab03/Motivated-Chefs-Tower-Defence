@@ -11,7 +11,7 @@ func update_health():
 
 # Bullet properties
 var speed = 300   # Speed of the bullet
-var damage = 5  # Damage dealt to the target
+var damage = 10  # Damage dealt to the target
 
 # Target information
 var target : Node2D = null
@@ -39,8 +39,19 @@ func _on_Bullet_body_entered(body):
 
 		# Remove the bullet from the scene
 		queue_free()
-
+		
+func take_damage():
+	enemyhealth -= 10
+	if(enemyhealth<0):
+		enemyhealth = 0
+		queue_free()
+	update_health()
+	
 # Function to set the bullet's initial position and rotation
 func start(position, rotation):
 	global_position = position
 	global_rotation = rotation
+	
+func get_damage():
+	return damage
+
