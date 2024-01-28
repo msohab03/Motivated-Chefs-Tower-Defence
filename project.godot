@@ -15,6 +15,11 @@ run/main_scene="res://StartMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Tower="*res://tower.tscn"
+Tower1Panel="*res://Tower1Panel.tscn"
+
 [display]
 
 window/stretch/mode="viewport"

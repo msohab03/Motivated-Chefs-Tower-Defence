@@ -1,7 +1,8 @@
 extends Panel
 
-@onready var tower = preload("res://test_tower.tscn") #ENTER PATH TO TOWER SCENE HERE
+@onready var tower = preload("res://tower.tscn") #ENTER PATH TO TOWER SCENE HERE
 var currTile #keep for a bit?
+var selected = false;
 
 func _on_gui_input(event):
 	var tempTower = tower.instantiate()
@@ -9,6 +10,7 @@ func _on_gui_input(event):
 		#mouse click
 		add_child(tempTower)
 		tempTower.process_mode = Node.PROCESS_MODE_DISABLED
+		selected = true 
 	elif event is InputEventMouseMotion and event.button_mask == 1:
 		get_child(1).global_position = event.global_position
 		#mouse moved
@@ -19,5 +21,6 @@ func _on_gui_input(event):
 		#mouse click release
 		var source = get_tree().get_root().get_node("Level1/Towers")
 		source.add_child(tempTower)
-		tempTower.global_position = event.global_position
+		tempTower.global_position = event.global_position 
 		#tempTower.get_node("Area").hide()
+		selected = false 

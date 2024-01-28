@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0qxw0gof05dm"
-path="res://.godot/imported/PopButton.png-dfe20109ba537454e87196c7ff7cff26.ctex"
+uid="uid://csm5llkd55gcs"
+path="res://.godot/imported/Billy.png-c0c447da7b32c8d6f02a6e789234ea3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://towers/PopButton.png"
-dest_files=["res://.godot/imported/PopButton.png-dfe20109ba537454e87196c7ff7cff26.ctex"]
+source_file="res://towers/Billy.png"
+dest_files=["res://.godot/imported/Billy.png-c0c447da7b32c8d6f02a6e789234ea3e.ctex"]
 
 [params]
 

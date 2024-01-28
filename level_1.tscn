@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c66byyepf3ch7"]
+[gd_scene load_steps=9 format=3 uid="uid://c66byyepf3ch7"]
 
 [ext_resource type="Script" path="res://PathSpawner.gd" id="1_o0s0h"]
 [ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Enemy.tscn" id="2_dmkvb"]
 [ext_resource type="Texture2D" uid="uid://c58lnu4vaukcb" path="res://69768082_Realistic Isolated Decorated Birthday Cake on Transparent Background.jpg" id="2_dueht"]
 [ext_resource type="Script" path="res://HomeBase.gd" id="4_xoh05"]
 [ext_resource type="PackedScene" uid="uid://seqonouutnxp" path="res://tower_place_ui.tscn" id="5_ykevp"]
+[ext_resource type="PackedScene" uid="uid://bpqhqvtbe5l1v" path="res://droppable_platform.tscn" id="6_347su"]
 
 [sub_resource type="Curve2D" id="Curve2D_03me5"]
 _data = {
@@ -49,3 +50,6 @@ texture = ExtResource("2_dueht")
 [node name="TowerPlaceUI" parent="." instance=ExtResource("5_ykevp")]
 
 [node name="Towers" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("6_347su")]
+position = Vector2(129, 201)
