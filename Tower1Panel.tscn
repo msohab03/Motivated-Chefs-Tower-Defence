@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct10v3buqw8m3"]
+[gd_scene load_steps=4 format=3 uid="uid://ct10v3buqw8m3"]
 
 [ext_resource type="Script" path="res://Tower1Panel.gd" id="1_g26vg"]
 [ext_resource type="Texture2D" uid="uid://by0now7vtfow0" path="res://towers/Billy.png" id="2_pbb64"]
+[ext_resource type="Texture2D" uid="uid://5aessojj4pas" path="res://assets/FameIcon.png" id="3_cp3no"]
 
 [node name="Tower1Panel" type="Panel"]
 custom_minimum_size = Vector2(90, 90)
@@ -13,5 +14,19 @@ script = ExtResource("1_g26vg")
 position = Vector2(44, 43)
 scale = Vector2(0.710932, 0.812333)
 texture = ExtResource("2_pbb64")
+
+[node name="Label" type="Label" parent="PopButton"]
+modulate = Color(1, 0.764706, 0.356863, 1)
+offset_left = -1.4066
+offset_top = 32.0066
+offset_right = 38.5934
+offset_bottom = 55.0066
+text = "100
+"
+
+[node name="Cost" type="Sprite2D" parent="PopButton"]
+position = Vector2(-25.3189, 43.0858)
+scale = Vector2(0.185203, 0.162085)
+texture = ExtResource("3_cp3no")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

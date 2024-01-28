@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Base.gd" id="2_uob35"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gelmc"]
-radius = 48.0
+radius = 41.0
 
 [node name="HomeBase" type="RigidBody2D"]
 mass = 1000.0

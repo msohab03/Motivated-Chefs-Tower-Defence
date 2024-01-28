@@ -24,5 +24,5 @@ func _on_base_body_entered(body):
 func update_health():
 	if (Health <= 0):
 		Health = 0
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://end_screen.tscn")
 	$Base_HealthBar.value = Health

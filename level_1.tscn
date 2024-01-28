@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c66byyepf3ch7"]
+[gd_scene load_steps=24 format=3 uid="uid://c66byyepf3ch7"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_iy1uo"]
 [ext_resource type="Script" path="res://PathSpawner.gd" id="1_o0s0h"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bht7qwq3uet11" path="res://Cookie.tscn" id="15_5iggo"]
 [ext_resource type="PackedScene" uid="uid://b7hqomxmsegdy" path="res://Baguette.tscn" id="16_83lxc"]
 [ext_resource type="Texture2D" uid="uid://r6ac80iv4dtk" path="res://assets/BIN.png" id="16_gxom8"]
+[ext_resource type="Texture2D" uid="uid://bajudar6slken" path="res://assets/Fame.png" id="21_cj7ps"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ela0k"]
 animations = [{
@@ -125,17 +126,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Score" type="Label" parent="Control"]
+modulate = Color(1, 0.886275, 0.670588, 1)
 layout_mode = 0
-offset_left = 1048.0
-offset_top = 514.0
-offset_right = 1176.0
-offset_bottom = 613.0
+offset_left = 1064.0
+offset_top = 506.0
+offset_right = 1152.0
+offset_bottom = 549.0
+theme_override_font_sizes/font_size = 30
 script = ExtResource("7_ar3k6")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
-layout_mode = 0
-offset_left = 1024.0
-offset_top = 514.0
-offset_right = 1048.0
-offset_bottom = 554.0
-text = "$:"
+[node name="FAME" type="Sprite2D" parent="Control"]
+position = Vector2(1003, 527)
+scale = Vector2(0.18125, 0.18125)
+texture = ExtResource("21_cj7ps")
