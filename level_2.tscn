@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://g06f2rlvd4k8"]
+
+[ext_resource type="Script" path="res://PathSpawner.gd" id="1_chev0"]
+[ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Enemy.tscn" id="2_k3u2f"]
+[ext_resource type="Script" path="res://HomeBase.gd" id="3_tv4wd"]
+[ext_resource type="Texture2D" uid="uid://c58lnu4vaukcb" path="res://69768082_Realistic Isolated Decorated Birthday Cake on Transparent Background.jpg" id="4_k5gn3"]
+
+[sub_resource type="Curve2D" id="Curve2D_03me5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 960, 64, 0, 0, 0, 0, 960, 576, 0, 0, 0, 0, 64, 568, 0, 0, 0, 0, 64, 128, 0, 0, 0, 0, 832, 128, 0, 0, 0, 0, 832, 512, 0, 0, 0, 0, 192, 512, 0, 0, 0, 0, 192, 256, 0, 0, 0, 0, 320, 256, 0, 0, 0, 0, 320, 448, 0, 0, 0, 0, 704, 448, 0, 0, 0, 0, 704, 192, 0, 0, 0, 0, 512, 192, 0, 0, 0, 0, 512, 288)
+}
+point_count = 15
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gelmc"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_03me5")
+script = ExtResource("1_chev0")
+
+[node name="Enemy" parent="Path" instance=ExtResource("2_k3u2f")]
+rotates = false
+
+[node name="HomeBase" type="StaticBody2D" parent="."]
+script = ExtResource("3_tv4wd")
+
+[node name="Base_HealthBar" type="ProgressBar" parent="HomeBase"]
+modulate = Color(1, 0.435294, 1, 1)
+offset_left = 432.0
+offset_top = 384.0
+offset_right = 752.0
+offset_bottom = 414.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
+
+[node name="regin_timer" type="Timer" parent="HomeBase"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeBase"]
+position = Vector2(512, 288)
+shape = SubResource("CircleShape2D_gelmc")
+
+[node name="Sprite2D" type="Sprite2D" parent="HomeBase"]
+position = Vector2(512, 336)
+scale = Vector2(-0.0329818, 0.0317238)
+texture = ExtResource("4_k5gn3")

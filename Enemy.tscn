@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://qq7qu1hcwlt0"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_3f8jr"]
+[ext_resource type="Script" path="res://EnemyBody.gd" id="2_rjcdo"]
+[ext_resource type="Texture2D" uid="uid://dj1aks5q16dsx" path="res://PacMan.jpg" id="2_vuklm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svtja"]
+size = Vector2(65, 61)
+
+[node name="Enemy" type="PathFollow2D"]
+position = Vector2(0, 64)
+loop = false
+script = ExtResource("1_3f8jr")
+
+[node name="EnemyBody" type="CharacterBody2D" parent="."]
+script = ExtResource("2_rjcdo")
+
+[node name="enemy_HealthBar" type="ProgressBar" parent="EnemyBody"]
+modulate = Color(0.329412, 0.678431, 0.231373, 1)
+clip_contents = true
+offset_left = -32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 64.0
+scale = Vector2(0.5, 0.5)
+rounded = true
+show_percentage = false
+
+[node name="EnemyHitbox" type="CollisionShape2D" parent="EnemyBody"]
+shape = SubResource("RectangleShape2D_svtja")
+
+[node name="EnemyLooks" type="Sprite2D" parent="EnemyBody"]
+position = Vector2(-4.76837e-07, 7.15256e-07)
+scale = Vector2(0.124477, 0.142761)
+texture = ExtResource("2_vuklm")
+
+[node name="Timer_regen" type="Timer" parent="EnemyBody"]
+wait_time = 0.2
+one_shot = true
