@@ -5,6 +5,7 @@ extends StaticBody2D
 func _process(delta):
 	update_health()
 
+
 func update_health():
 	
 	var BASEhealthbar = $"Base_HealthBar"
@@ -18,7 +19,7 @@ func update_health():
 #
 #func _on_regin_timer_timeout():
 #	if health < 100:
-#		health = health + 50
+#		health = health + 10
 #		if (health > 100):
 #			health = 100
 #	if health <= 0:

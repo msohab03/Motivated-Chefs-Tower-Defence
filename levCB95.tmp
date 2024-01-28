@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://c66byyepf3ch7"]
+
+[ext_resource type="Script" path="res://PathSpawner.gd" id="1_o0s0h"]
+[ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Enemy.tscn" id="2_dmkvb"]
+[ext_resource type="Texture2D" uid="uid://c58lnu4vaukcb" path="res://69768082_Realistic Isolated Decorated Birthday Cake on Transparent Background.jpg" id="2_dueht"]
+[ext_resource type="Script" path="res://HomeBase.gd" id="4_xoh05"]
+
+[sub_resource type="GDScript" id="GDScript_gy3ty"]
+script/source = "extends Node2D
+
+var tower = preload(\"res://tower.tscn\")
+
+func _on_button_pressed():
+	var newTower = tower.instantiate()
+	add_child(newTower);
+"
+
+[sub_resource type="Curve2D" id="Curve2D_03me5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 960, 64, 0, 0, 0, 0, 960, 576, 0, 0, 0, 0, 64, 568, 0, 0, 0, 0, 64, 128, 0, 0, 0, 0, 832, 128, 0, 0, 0, 0, 832, 512, 0, 0, 0, 0, 192, 512, 0, 0, 0, 0, 192, 256, 0, 0, 0, 0, 320, 256, 0, 0, 0, 0, 320, 448, 0, 0, 0, 0, 704, 448, 0, 0, 0, 0, 704, 192, 0, 0, 0, 0, 512, 192, 0, 0, 0, 0, 512, 288)
+}
+point_count = 15
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gelmc"]
+
+[node name="Level1" type="Node2D"]
+script = SubResource("GDScript_gy3ty")
+
+[node name="Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_03me5")
+script = ExtResource("1_o0s0h")
+
+[node name="Enemy" parent="Path" instance=ExtResource("2_dmkvb")]
+rotates = false
+
+[node name="HomeBase" type="StaticBody2D" parent="."]
+script = ExtResource("4_xoh05")
+
+[node name="Base_HealthBar" type="ProgressBar" parent="HomeBase"]
+modulate = Color(1, 0.435294, 1, 1)
+offset_left = 432.0
+offset_top = 384.0
+offset_right = 752.0
+offset_bottom = 414.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
+
+[node name="regin_timer" type="Timer" parent="HomeBase"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeBase"]
+position = Vector2(512, 288)
+shape = SubResource("CircleShape2D_gelmc")
+
+[node name="Sprite2D" type="Sprite2D" parent="HomeBase"]
+position = Vector2(512, 336)
+scale = Vector2(-0.0329818, 0.0317238)
+texture = ExtResource("2_dueht")

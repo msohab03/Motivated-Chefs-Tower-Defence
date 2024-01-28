@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://EnemyBody.gd" id="2_rjcdo"]
 [ext_resource type="Texture2D" uid="uid://dj1aks5q16dsx" path="res://PacMan.jpg" id="2_vuklm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_svtja"]
-size = Vector2(65, 61)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ce527"]
+radius = 64.0
 
 [node name="Enemy" type="PathFollow2D"]
 position = Vector2(0, 64)
@@ -27,7 +27,7 @@ rounded = true
 show_percentage = false
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="EnemyBody"]
-shape = SubResource("RectangleShape2D_svtja")
+shape = SubResource("CircleShape2D_ce527")
 
 [node name="EnemyLooks" type="Sprite2D" parent="EnemyBody"]
 position = Vector2(-4.76837e-07, 7.15256e-07)

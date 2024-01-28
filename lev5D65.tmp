@@ -3,9 +3,12 @@
 [ext_resource type="Script" path="res://PathSpawner.gd" id="1_o0s0h"]
 [ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Enemy.tscn" id="2_dmkvb"]
 [ext_resource type="Texture2D" uid="uid://c58lnu4vaukcb" path="res://69768082_Realistic Isolated Decorated Birthday Cake on Transparent Background.jpg" id="2_dueht"]
-[ext_resource type="PackedScene" uid="uid://d351a2lerbb7p" path="res://Home_Base.tscn" id="3_booaq"]
-[ext_resource type="PackedScene" uid="uid://cjqfo72pt2qpa" path="res://tower.tscn" id="5_nlxha"]
-[ext_resource type="PackedScene" uid="uid://b5joek407w23y" path="res://Char1.tscn" id="6_tjdy2"]
+[ext_resource type="Script" path="res://HomeBase.gd" id="4_xoh05"]
+
+[sub_resource type="GDScript" id="GDScript_gy3ty"]
+script/source = "extends Node2D
+
+"
 
 [sub_resource type="Curve2D" id="Curve2D_03me5"]
 _data = {
@@ -13,7 +16,10 @@ _data = {
 }
 point_count = 15
 
-[node name="level_1" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gelmc"]
+
+[node name="Level1" type="Node2D"]
+script = SubResource("GDScript_gy3ty")
 
 [node name="Path" type="Path2D" parent="."]
 curve = SubResource("Curve2D_03me5")
@@ -22,18 +28,25 @@ script = ExtResource("1_o0s0h")
 [node name="Enemy" parent="Path" instance=ExtResource("2_dmkvb")]
 rotates = false
 
-[node name="HomeBase" parent="." instance=ExtResource("3_booaq")]
-position = Vector2(512, 280)
+[node name="HomeBase" type="StaticBody2D" parent="."]
+script = ExtResource("4_xoh05")
+
+[node name="Base_HealthBar" type="ProgressBar" parent="HomeBase"]
+modulate = Color(1, 0.435294, 1, 1)
+offset_left = 432.0
+offset_top = 384.0
+offset_right = 752.0
+offset_bottom = 414.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
+
+[node name="regin_timer" type="Timer" parent="HomeBase"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeBase"]
+position = Vector2(512, 288)
+shape = SubResource("CircleShape2D_gelmc")
 
 [node name="Sprite2D" type="Sprite2D" parent="HomeBase"]
-position = Vector2(0, 48)
-rotation = 3.14159
-scale = Vector2(0.0329818, -0.0317238)
+position = Vector2(512, 336)
+scale = Vector2(-0.0329818, 0.0317238)
 texture = ExtResource("2_dueht")
-
-[node name="Tower" parent="." instance=ExtResource("5_nlxha")]
-position = Vector2(375, 197)
-
-[node name="Char1" parent="." instance=ExtResource("6_tjdy2")]
-position = Vector2(331, 39)
-enemy_array = [null]
