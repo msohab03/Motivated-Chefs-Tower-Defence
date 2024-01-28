@@ -34,7 +34,11 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 func checkDrop():
 	var area2d = get_node("Area2D")
 	var bodies = area2d.get_overlapping_bodies()
+	var foundDroppable = false
 	for body in bodies:
 		if body.is_in_group("droppable"):
 			body.dropTower(self)
+			foundDroppable = true
 			return
+	if not foundDroppable:
+		position = original_position
