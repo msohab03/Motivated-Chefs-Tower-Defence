@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b034umeu06a24"]
+
+[ext_resource type="Texture2D" uid="uid://b0qxw0gof05dm" path="res://towers/PopButton.png" id="1_1gxop"]
+
+[node name="TestTower" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_1gxop")
