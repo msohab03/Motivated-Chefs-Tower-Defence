@@ -1,43 +1,43 @@
-[gd_scene load_steps=8 format=3 uid="uid://c66byyepf3ch7"]
+[gd_scene load_steps=7 format=3 uid="uid://c66byyepf3ch7"]
 
 [ext_resource type="Script" path="res://PathSpawner.gd" id="1_o0s0h"]
 [ext_resource type="PackedScene" uid="uid://qq7qu1hcwlt0" path="res://Enemy.tscn" id="2_dmkvb"]
 [ext_resource type="Texture2D" uid="uid://c58lnu4vaukcb" path="res://69768082_Realistic Isolated Decorated Birthday Cake on Transparent Background.jpg" id="2_dueht"]
 [ext_resource type="PackedScene" uid="uid://d351a2lerbb7p" path="res://Home_Base.tscn" id="3_booaq"]
-[ext_resource type="PackedScene" uid="uid://cjqfo72pt2qpa" path="res://tower.tscn" id="5_nlxha"]
 [ext_resource type="PackedScene" uid="uid://b5joek407w23y" path="res://Char1.tscn" id="6_tjdy2"]
 
 [sub_resource type="Curve2D" id="Curve2D_03me5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 960, 64, 0, 0, 0, 0, 960, 576, 0, 0, 0, 0, 64, 568, 0, 0, 0, 0, 64, 128, 0, 0, 0, 0, 832, 128, 0, 0, 0, 0, 832, 512, 0, 0, 0, 0, 192, 512, 0, 0, 0, 0, 192, 256, 0, 0, 0, 0, 320, 256, 0, 0, 0, 0, 320, 448, 0, 0, 0, 0, 704, 448, 0, 0, 0, 0, 704, 192, 0, 0, 0, 0, 512, 192, 0, 0, 0, 0, 512, 288)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 48, 0, 0, 0, 0, 984, 48, 0, 0, 0, 0, 984, 560, 0, 0, 0, 0, 792, 560, 0, 0, 0, 0, 24, 560, 0, 0, 0, 0, 24, 368, 0, 0, 0, 0, 24, 176, 0, 0, 0, 0, 152, 176, 0, 0, 0, 0, 152, 496, 0, 0, 0, 0, 344, 496, 0, 0, 0, 0, 344, 176, 0, 0, 0, 0, 536, 176, 0, 0, 0, 0, 536, 496, 0, 0, 0, 0, 664, 496, 0, 0, 0, 0, 664, 176, 0, 0, 0, 0, 840, 176, 0, 0, 0, 0, 840, 400, 0, 0, 0, 0, 840, 448)
 }
-point_count = 15
+point_count = 18
 
 [node name="level_1" type="Node2D"]
 
 [node name="Path" type="Path2D" parent="."]
+position = Vector2(40, 16)
 curve = SubResource("Curve2D_03me5")
 script = ExtResource("1_o0s0h")
 
 [node name="Enemy" parent="Path" instance=ExtResource("2_dmkvb")]
-position = Vector2(0, 64)
+position = Vector2(0, 48)
 rotates = false
 
 [node name="HomeBase" parent="." instance=ExtResource("3_booaq")]
-position = Vector2(512, 280)
+position = Vector2(880, 419)
 mass = 0.01
 gravity_scale = 0.0
 lock_rotation = true
 freeze = true
 
 [node name="Sprite2D" type="Sprite2D" parent="HomeBase"]
-position = Vector2(0, 48)
+position = Vector2(0, 40)
 rotation = 3.14159
 scale = Vector2(0.0329818, -0.0317238)
 texture = ExtResource("2_dueht")
 
-[node name="Tower" parent="." instance=ExtResource("5_nlxha")]
-position = Vector2(375, 197)
+[node name="regin timer" type="Timer" parent="HomeBase"]
+wait_time = 0.5
 
 [node name="Char1" parent="." instance=ExtResource("6_tjdy2")]
-position = Vector2(3, 159)
+position = Vector2(259, 167)

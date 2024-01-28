@@ -1,7 +1,6 @@
 extends PathFollow2D
 
-@export var runSpeed = 5000
-@export var damage = 25
+@export var runSpeed = 600
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

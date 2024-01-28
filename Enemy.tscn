@@ -26,14 +26,9 @@ offset_right = 96.0
 offset_bottom = 64.0
 scale = Vector2(0.5, 0.5)
 rounded = true
-show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="EnemyLooks" type="Sprite2D" parent="EnemyBody"]
 position = Vector2(8.52651e-14, 7.15256e-07)
 scale = Vector2(0.124477, 0.142761)
 texture = ExtResource("2_vuklm")
-
-[node name="Timer_regen" type="Timer" parent="EnemyBody"]
-wait_time = 0.2
-one_shot = true
